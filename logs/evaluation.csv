@@ -1,0 +1,5 @@
+opponent,wins,losses,draws,win_rate,avg_turns
+wall_hugger,0,100,0,0.0,27.39
+cutter,21,49,30,0.21,64.0
+random_inertia,57,42,1,0.57,47.64
+straight_biased,0,100,0,0.0,27.34

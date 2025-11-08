@@ -3,7 +3,7 @@ import uuid
 from flask import Flask, request, jsonify
 from threading import Lock
 from collections import deque
-from dql.heuristic import choose_heuristic_move
+from heuristic import choose_heuristic_move
 
 from case_closed_game import Game, Direction, GameResult
 
@@ -97,23 +97,16 @@ def send_move():
         boosts_remaining = my_agent.boosts_remaining
    
     # -----------------your code here-------------------
-    # Simple example: always go RIGHT (replace this with your logic)
-    # To use a boost: move = "RIGHT:BOOST"
+    # Use the shared heuristic for a torus-aware safe move.
     try:
-        if POLICY is not None:
-            a_idx = POLICY.action_idx(GLOBAL_GAME)
-            move_dir = [Direction.UP, Direction.DOWN, Direction.LEFT, Direction.RIGHT][a_idx]
-            move = move_dir.name
-        else:
-            raise RuntimeError("Policy not loaded")
-    except Exception:
-        # fallback heuristic
         move = choose_heuristic_move(GLOBAL_GAME, me_player_number=player_number, allow_boost=False)
-    
-    # Example: Use boost if available and it's late in the game
-    # turn_count = state.get("turn_count", 0)
-    # if boosts_remaining > 0 and turn_count > 50:
-    #     move = "RIGHT:BOOST"
+    except Exception:
+        move = "RIGHT"
+
+    # Conservative boost usage: only if late game and we still have boosts.
+    turn_count = state.get("turn_count", 0)
+    if boosts_remaining > 0 and turn_count > 160 and ":BOOST" not in move:
+        move = f"{move}:BOOST"
     # -----------------end code here--------------------
 
     return jsonify({"move": move}), 200
