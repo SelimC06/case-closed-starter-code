@@ -35,6 +35,31 @@ class Judge:
         self.p2_agent = None
         self.game_str = ""  # Track game moves as string
 
+    def render_board_ab(self):
+        """Render the board using 'A' for Agent 1 and 'B' for Agent 2.
+
+        This does not rely on the board's stored cell values (which are the
+        same for both agents). Instead it overlays each agent's trail.
+        """
+        grid = self.game.board.grid
+        h = len(grid)
+        w = len(grid[0]) if h > 0 else 0
+
+        # Start with empty dots
+        out_rows = [['.' for _ in range(w)] for _ in range(h)]
+
+        # Mark trails
+        for (x, y) in self.game.agent1.get_trail_positions():
+            if 0 <= y < h and 0 <= x < w:
+                out_rows[y][x] = 'A'
+        for (x, y) in self.game.agent2.get_trail_positions():
+            if 0 <= y < h and 0 <= x < w:
+                # If both agents happen to overlap (rare/head-on), show 'X'
+                out_rows[y][x] = 'B' if out_rows[y][x] == '.' else 'X'
+
+        # Stringify
+        return '\n'.join(' '.join(row) for row in out_rows)
+
     def check_latency(self):
         """Check latency for both players and create their agents"""
         # Check P1
@@ -212,6 +237,11 @@ class Judge:
             
 
 def main():
+    # Redirect all stdout prints to a log file for later viewing
+    log_path = os.getenv("LOG_FILE", "game_output.txt")
+    log_file = open(log_path, "w", buffering=1)
+    sys.stdout = log_file
+
     print("Judge engine starting up, waiting for agents...")
     time.sleep(5)
 
@@ -333,8 +363,8 @@ def main():
         judge.send_state(1)
         judge.send_state(2)
         
-        # Display current board state
-        print(judge.game.board)
+        # Display current board state (A/B for agents)
+        print(judge.render_board_ab())
         print(f"Agent 1: Trail Length={judge.game.agent1.length}, Alive={judge.game.agent1.alive}, Boosts={judge.game.agent1.boosts_remaining}")
         print(f"Agent 2: Trail Length={judge.game.agent2.length}, Alive={judge.game.agent2.alive}, Boosts={judge.game.agent2.boosts_remaining}")
         
@@ -353,5 +383,15 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        try:
+            sys.stdout.flush()
+        except Exception:
+            pass
+        try:
+            sys.stdout.close()
+        except Exception:
+            pass
     sys.exit(0)

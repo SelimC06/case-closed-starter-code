@@ -177,6 +177,6 @@ def next_pos(head, direction, width, height):
 
 if __name__ == "__main__":
     # Default to port 5008 to pair with sample_agent (5009)
-    port = int(os.environ.get("PORT", "5008"))
+    port = int(os.environ.get("PORT", "5009"))
     print(f"Starting {AGENT_NAME} ({PARTICIPANT}) on port {port}...")
     app.run(host="0.0.0.0", port=port, debug=False)

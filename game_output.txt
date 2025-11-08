@@ -1,0 +1,2511 @@
+Judge engine starting up, waiting for agents...
+Creating judge for http://localhost:5008 and http://localhost:5009...
+Player 1: MyAgent (Participant)
+Player 2: MyAgent (Participant)
+Initial latencies - P1: 0.025s, P2: 0.007s
+Sending initial game state...
+
+=== Turn 1 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=3, Alive=True, Boosts=3
+Agent 2: Trail Length=3, Alive=True, Boosts=3
+
+=== Turn 2 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=4, Alive=True, Boosts=3
+Agent 2: Trail Length=4, Alive=True, Boosts=3
+
+=== Turn 3 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=5, Alive=True, Boosts=3
+Agent 2: Trail Length=5, Alive=True, Boosts=3
+
+=== Turn 4 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=6, Alive=True, Boosts=3
+Agent 2: Trail Length=6, Alive=True, Boosts=3
+
+=== Turn 5 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=7, Alive=True, Boosts=3
+Agent 2: Trail Length=7, Alive=True, Boosts=3
+
+=== Turn 6 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=8, Alive=True, Boosts=3
+Agent 2: Trail Length=8, Alive=True, Boosts=3
+
+=== Turn 7 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=9, Alive=True, Boosts=3
+Agent 2: Trail Length=9, Alive=True, Boosts=3
+
+=== Turn 8 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . B B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=10, Alive=True, Boosts=3
+Agent 2: Trail Length=10, Alive=True, Boosts=3
+
+=== Turn 9 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . B B B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=11, Alive=True, Boosts=3
+Agent 2: Trail Length=11, Alive=True, Boosts=3
+
+=== Turn 10 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A A . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . B B B B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=12, Alive=True, Boosts=3
+Agent 2: Trail Length=12, Alive=True, Boosts=3
+
+=== Turn 11 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A A A . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . B B B B B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=13, Alive=True, Boosts=3
+Agent 2: Trail Length=13, Alive=True, Boosts=3
+
+=== Turn 12 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A A A A . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . B B B B B B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=14, Alive=True, Boosts=3
+Agent 2: Trail Length=14, Alive=True, Boosts=3
+
+=== Turn 13 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A A A A A . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . B B B B B B B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=15, Alive=True, Boosts=3
+Agent 2: Trail Length=15, Alive=True, Boosts=3
+
+=== Turn 14 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A A A A A A . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . B B B B B B B B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=16, Alive=True, Boosts=3
+Agent 2: Trail Length=16, Alive=True, Boosts=3
+
+=== Turn 15 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A A A A A A A . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. B B B B B B B B B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=17, Alive=True, Boosts=3
+Agent 2: Trail Length=17, Alive=True, Boosts=3
+
+=== Turn 16 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A A A A A A A A .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+B B B B B B B B B B B B B B B B B B . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=18, Alive=True, Boosts=3
+Agent 2: Trail Length=18, Alive=True, Boosts=3
+
+=== Turn 17 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+B B B B B B B B B B B B B B B B B B . B
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=19, Alive=True, Boosts=3
+Agent 2: Trail Length=19, Alive=True, Boosts=3
+
+=== Turn 18 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=20, Alive=True, Boosts=3
+Agent 2: Trail Length=20, Alive=True, Boosts=3
+
+=== Turn 19 ===
+Requesting move from Player 1...
+Player 1's move: UP
+Requesting move from Player 2...
+Player 2's move: UP
+. . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=21, Alive=True, Boosts=3
+Agent 2: Trail Length=21, Alive=True, Boosts=3
+
+=== Turn 20 ===
+Requesting move from Player 1...
+Player 1's move: UP
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=22, Alive=True, Boosts=3
+Agent 2: Trail Length=22, Alive=True, Boosts=3
+
+=== Turn 21 ===
+Requesting move from Player 1...
+Player 1's move: UP
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=23, Alive=True, Boosts=3
+Agent 2: Trail Length=23, Alive=True, Boosts=3
+
+=== Turn 22 ===
+Requesting move from Player 1...
+Player 1's move: UP
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=24, Alive=True, Boosts=3
+Agent 2: Trail Length=24, Alive=True, Boosts=3
+
+=== Turn 23 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . . . . . . . . . . A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=25, Alive=True, Boosts=3
+Agent 2: Trail Length=25, Alive=True, Boosts=3
+
+=== Turn 24 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . . . . . . . . . A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=26, Alive=True, Boosts=3
+Agent 2: Trail Length=26, Alive=True, Boosts=3
+
+=== Turn 25 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . . . . . . . . A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=27, Alive=True, Boosts=3
+Agent 2: Trail Length=27, Alive=True, Boosts=3
+
+=== Turn 26 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . . . . . . . A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=28, Alive=True, Boosts=3
+Agent 2: Trail Length=28, Alive=True, Boosts=3
+
+=== Turn 27 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . . . . . . A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=29, Alive=True, Boosts=3
+Agent 2: Trail Length=29, Alive=True, Boosts=3
+
+=== Turn 28 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . . . . . A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=30, Alive=True, Boosts=3
+Agent 2: Trail Length=30, Alive=True, Boosts=3
+
+=== Turn 29 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . . . . A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=31, Alive=True, Boosts=3
+Agent 2: Trail Length=31, Alive=True, Boosts=3
+
+=== Turn 30 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . . . A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=32, Alive=True, Boosts=3
+Agent 2: Trail Length=32, Alive=True, Boosts=3
+
+=== Turn 31 ===
+Requesting move from Player 1...
+Player 1's move: LEFT (BOOST)
+Requesting move from Player 2...
+Player 2's move: LEFT (BOOST)
+Agent 1 used boost! (2 remaining)
+Agent 2 used boost! (2 remaining)
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . . . B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . . . A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=34, Alive=True, Boosts=2
+Agent 2: Trail Length=34, Alive=True, Boosts=2
+
+=== Turn 32 ===
+Requesting move from Player 1...
+Player 1's move: LEFT (BOOST)
+Requesting move from Player 2...
+Player 2's move: LEFT (BOOST)
+Agent 1 used boost! (1 remaining)
+Agent 2 used boost! (1 remaining)
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . . . B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . . . A A A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=36, Alive=True, Boosts=1
+Agent 2: Trail Length=36, Alive=True, Boosts=1
+
+=== Turn 33 ===
+Requesting move from Player 1...
+Player 1's move: LEFT (BOOST)
+Requesting move from Player 2...
+Player 2's move: LEFT (BOOST)
+Agent 1 used boost! (0 remaining)
+Agent 2 used boost! (0 remaining)
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . . B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . . A A A A A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=38, Alive=True, Boosts=0
+Agent 2: Trail Length=38, Alive=True, Boosts=0
+
+=== Turn 34 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . . B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . . A A A A A A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=39, Alive=True, Boosts=0
+Agent 2: Trail Length=39, Alive=True, Boosts=0
+
+=== Turn 35 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . . B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . . A A A A A A A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=40, Alive=True, Boosts=0
+Agent 2: Trail Length=40, Alive=True, Boosts=0
+
+=== Turn 36 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . . B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . . A A A A A A A A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=41, Alive=True, Boosts=0
+Agent 2: Trail Length=41, Alive=True, Boosts=0
+
+=== Turn 37 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . . B B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A . A A A A A A A A A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=42, Alive=True, Boosts=0
+Agent 2: Trail Length=42, Alive=True, Boosts=0
+
+=== Turn 38 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . . B B B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=43, Alive=True, Boosts=0
+Agent 2: Trail Length=43, Alive=True, Boosts=0
+
+=== Turn 39 ===
+Requesting move from Player 1...
+Player 1's move: DOWN
+Requesting move from Player 2...
+Player 2's move: LEFT
+A . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . . B B B B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=44, Alive=True, Boosts=0
+Agent 2: Trail Length=44, Alive=True, Boosts=0
+
+=== Turn 40 ===
+Requesting move from Player 1...
+Player 1's move: DOWN
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . . B B B B B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=45, Alive=True, Boosts=0
+Agent 2: Trail Length=45, Alive=True, Boosts=0
+
+=== Turn 41 ===
+Requesting move from Player 1...
+Player 1's move: DOWN
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A . . . . . . . . . . . . . . . . . .
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . . B B B B B B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=46, Alive=True, Boosts=0
+Agent 2: Trail Length=46, Alive=True, Boosts=0
+
+=== Turn 42 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A . . . . . . . . . . . . . . . . . .
+A A A . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . . B B B B B B B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=47, Alive=True, Boosts=0
+Agent 2: Trail Length=47, Alive=True, Boosts=0
+
+=== Turn 43 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A . . . . . . . . . . . . . . . . . .
+A A A A . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. . B B B B B B B B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=48, Alive=True, Boosts=0
+Agent 2: Trail Length=48, Alive=True, Boosts=0
+
+=== Turn 44 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A . . . . . . . . . . . . . . . . . .
+A A A A A . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+. B B B B B B B B B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=49, Alive=True, Boosts=0
+Agent 2: Trail Length=49, Alive=True, Boosts=0
+
+=== Turn 45 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=50, Alive=True, Boosts=0
+Agent 2: Trail Length=50, Alive=True, Boosts=0
+
+=== Turn 46 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=51, Alive=True, Boosts=0
+Agent 2: Trail Length=51, Alive=True, Boosts=0
+
+=== Turn 47 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=52, Alive=True, Boosts=0
+Agent 2: Trail Length=52, Alive=True, Boosts=0
+
+=== Turn 48 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=53, Alive=True, Boosts=0
+Agent 2: Trail Length=53, Alive=True, Boosts=0
+
+=== Turn 49 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=54, Alive=True, Boosts=0
+Agent 2: Trail Length=54, Alive=True, Boosts=0
+
+=== Turn 50 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=55, Alive=True, Boosts=0
+Agent 2: Trail Length=55, Alive=True, Boosts=0
+
+=== Turn 51 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=56, Alive=True, Boosts=0
+Agent 2: Trail Length=56, Alive=True, Boosts=0
+
+=== Turn 52 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=57, Alive=True, Boosts=0
+Agent 2: Trail Length=57, Alive=True, Boosts=0
+
+=== Turn 53 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=58, Alive=True, Boosts=0
+Agent 2: Trail Length=58, Alive=True, Boosts=0
+
+=== Turn 54 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A . . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=59, Alive=True, Boosts=0
+Agent 2: Trail Length=59, Alive=True, Boosts=0
+
+=== Turn 55 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A . . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=60, Alive=True, Boosts=0
+Agent 2: Trail Length=60, Alive=True, Boosts=0
+
+=== Turn 56 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A . . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B .
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=61, Alive=True, Boosts=0
+Agent 2: Trail Length=61, Alive=True, Boosts=0
+
+=== Turn 57 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: DOWN
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A . .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=62, Alive=True, Boosts=0
+Agent 2: Trail Length=62, Alive=True, Boosts=0
+
+=== Turn 58 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A .
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=63, Alive=True, Boosts=0
+Agent 2: Trail Length=63, Alive=True, Boosts=0
+
+=== Turn 59 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=64, Alive=True, Boosts=0
+Agent 2: Trail Length=64, Alive=True, Boosts=0
+
+=== Turn 60 ===
+Requesting move from Player 1...
+Player 1's move: UP
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . .
+Agent 1: Trail Length=65, Alive=True, Boosts=0
+Agent 2: Trail Length=65, Alive=True, Boosts=0
+
+=== Turn 61 ===
+Requesting move from Player 1...
+Player 1's move: UP
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . . A
+Agent 1: Trail Length=66, Alive=True, Boosts=0
+Agent 2: Trail Length=66, Alive=True, Boosts=0
+
+=== Turn 62 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . . A A
+Agent 1: Trail Length=67, Alive=True, Boosts=0
+Agent 2: Trail Length=67, Alive=True, Boosts=0
+
+=== Turn 63 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . . A A A
+Agent 1: Trail Length=68, Alive=True, Boosts=0
+Agent 2: Trail Length=68, Alive=True, Boosts=0
+
+=== Turn 64 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . . A A A A
+Agent 1: Trail Length=69, Alive=True, Boosts=0
+Agent 2: Trail Length=69, Alive=True, Boosts=0
+
+=== Turn 65 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . . A A A A A
+Agent 1: Trail Length=70, Alive=True, Boosts=0
+Agent 2: Trail Length=70, Alive=True, Boosts=0
+
+=== Turn 66 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . . A A A A A A
+Agent 1: Trail Length=71, Alive=True, Boosts=0
+Agent 2: Trail Length=71, Alive=True, Boosts=0
+
+=== Turn 67 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . . A A A A A A A
+Agent 1: Trail Length=72, Alive=True, Boosts=0
+Agent 2: Trail Length=72, Alive=True, Boosts=0
+
+=== Turn 68 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . . A A A A A A A A
+Agent 1: Trail Length=73, Alive=True, Boosts=0
+Agent 2: Trail Length=73, Alive=True, Boosts=0
+
+=== Turn 69 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . . A A A A A A A A A
+Agent 1: Trail Length=74, Alive=True, Boosts=0
+Agent 2: Trail Length=74, Alive=True, Boosts=0
+
+=== Turn 70 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . . A A A A A A A A A A
+Agent 1: Trail Length=75, Alive=True, Boosts=0
+Agent 2: Trail Length=75, Alive=True, Boosts=0
+
+=== Turn 71 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . . A A A A A A A A A A A
+Agent 1: Trail Length=76, Alive=True, Boosts=0
+Agent 2: Trail Length=76, Alive=True, Boosts=0
+
+=== Turn 72 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B . . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . . A A A A A A A A A A A A
+Agent 1: Trail Length=77, Alive=True, Boosts=0
+Agent 2: Trail Length=77, Alive=True, Boosts=0
+
+=== Turn 73 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B . . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . . A A A A A A A A A A A A A
+Agent 1: Trail Length=78, Alive=True, Boosts=0
+Agent 2: Trail Length=78, Alive=True, Boosts=0
+
+=== Turn 74 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B . B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . . A A A A A A A A A A A A A A
+Agent 1: Trail Length=79, Alive=True, Boosts=0
+Agent 2: Trail Length=79, Alive=True, Boosts=0
+
+=== Turn 75 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: RIGHT
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . . A A A A A A A A A A A A A A A
+Agent 1: Trail Length=80, Alive=True, Boosts=0
+Agent 2: Trail Length=80, Alive=True, Boosts=0
+
+=== Turn 76 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . . A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=81, Alive=True, Boosts=0
+Agent 2: Trail Length=81, Alive=True, Boosts=0
+
+=== Turn 77 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A . A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=82, Alive=True, Boosts=0
+Agent 2: Trail Length=82, Alive=True, Boosts=0
+
+=== Turn 78 ===
+Requesting move from Player 1...
+Player 1's move: LEFT
+Requesting move from Player 2...
+Player 2's move: UP
+A A . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=83, Alive=True, Boosts=0
+Agent 2: Trail Length=83, Alive=True, Boosts=0
+
+=== Turn 79 ===
+Requesting move from Player 1...
+Player 1's move: DOWN
+Requesting move from Player 2...
+Player 2's move: UP
+A A A . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=84, Alive=True, Boosts=0
+Agent 2: Trail Length=84, Alive=True, Boosts=0
+
+=== Turn 80 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: UP
+A A A A . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=85, Alive=True, Boosts=0
+Agent 2: Trail Length=85, Alive=True, Boosts=0
+
+=== Turn 81 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: UP
+A A A A A . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=86, Alive=True, Boosts=0
+Agent 2: Trail Length=86, Alive=True, Boosts=0
+
+=== Turn 82 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: UP
+A A A A A A . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=87, Alive=True, Boosts=0
+Agent 2: Trail Length=87, Alive=True, Boosts=0
+
+=== Turn 83 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: UP
+A A A A A A A . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=88, Alive=True, Boosts=0
+Agent 2: Trail Length=88, Alive=True, Boosts=0
+
+=== Turn 84 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: UP
+A A A A A A A A . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . . B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=89, Alive=True, Boosts=0
+Agent 2: Trail Length=89, Alive=True, Boosts=0
+
+=== Turn 85 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: UP
+A A A A A A A A A . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=90, Alive=True, Boosts=0
+Agent 2: Trail Length=90, Alive=True, Boosts=0
+
+=== Turn 86 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=91, Alive=True, Boosts=0
+Agent 2: Trail Length=91, Alive=True, Boosts=0
+
+=== Turn 87 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A A . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=92, Alive=True, Boosts=0
+Agent 2: Trail Length=92, Alive=True, Boosts=0
+
+=== Turn 88 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A A A . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=93, Alive=True, Boosts=0
+Agent 2: Trail Length=93, Alive=True, Boosts=0
+
+=== Turn 89 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A A A A . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . . B B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=94, Alive=True, Boosts=0
+Agent 2: Trail Length=94, Alive=True, Boosts=0
+
+=== Turn 90 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A A A A A . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . . B B B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=95, Alive=True, Boosts=0
+Agent 2: Trail Length=95, Alive=True, Boosts=0
+
+=== Turn 91 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A A A A A A . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . . B B B B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=96, Alive=True, Boosts=0
+Agent 2: Trail Length=96, Alive=True, Boosts=0
+
+=== Turn 92 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A A A A A A A . . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . . B B B B B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=97, Alive=True, Boosts=0
+Agent 2: Trail Length=97, Alive=True, Boosts=0
+
+=== Turn 93 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A A A A A A A A . . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . . B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=98, Alive=True, Boosts=0
+Agent 2: Trail Length=98, Alive=True, Boosts=0
+
+=== Turn 94 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A A A A A A A A A . A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . . B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=99, Alive=True, Boosts=0
+Agent 2: Trail Length=99, Alive=True, Boosts=0
+
+=== Turn 95 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . . B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=100, Alive=True, Boosts=0
+Agent 2: Trail Length=100, Alive=True, Boosts=0
+
+=== Turn 96 ===
+Requesting move from Player 1...
+Player 1's move: RIGHT
+Requesting move from Player 2...
+Player 2's move: LEFT
+Agent 1 has crashed.
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+B B B B B B B B B B B B B B B B B B B B
+. . . . . . B B B B B B B B B B B B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+. . . . . . . . . . . . . . . . . B B B
+B B B B B B B B B B B B B B B B B B B B
+B B B B B B B B B B B B B B B B B B B B
+A A A A A A A A A A A A A A A A A A A A
+A A A A A A A A A A A A A A A A A A A A
+Agent 1: Trail Length=100, Alive=False, Boosts=0
+Agent 2: Trail Length=101, Alive=True, Boosts=0
+Winner: Agent 2 (MyAgent)
+Game String: 1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1U-2U-1U-2U-1U-2U-1U-2U-1L-2U-1L-2U-1L-2U-1L-2U-1L-2U-1L-2U-1L-2U-1L-2U-1LB-2LB-1LB-2LB-1LB-2LB-1L-2L-1L-2L-1L-2L-1L-2L-1L-2L-1D-2L-1D-2L-1D-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2D-1R-2D-1R-2D-1R-2D-1R-2D-1R-2D-1R-2D-1R-2D-1R-2D-1R-2D-1R-2D-1R-2R-1R-2R-1U-2R-1U-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2R-1L-2U-1L-2U-1L-2U-1D-2U-1R-2U-1R-2U-1R-2U-1R-2U-1R-2U-1R-2U-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-
