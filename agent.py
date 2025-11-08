@@ -3,6 +3,7 @@ import uuid
 from flask import Flask, request, jsonify
 from threading import Lock
 from collections import deque
+from dql.heuristic import choose_heuristic_move
 
 from case_closed_game import Game, Direction, GameResult
 
@@ -98,7 +99,16 @@ def send_move():
     # -----------------your code here-------------------
     # Simple example: always go RIGHT (replace this with your logic)
     # To use a boost: move = "RIGHT:BOOST"
-    move = "RIGHT"
+    try:
+        if POLICY is not None:
+            a_idx = POLICY.action_idx(GLOBAL_GAME)
+            move_dir = [Direction.UP, Direction.DOWN, Direction.LEFT, Direction.RIGHT][a_idx]
+            move = move_dir.name
+        else:
+            raise RuntimeError("Policy not loaded")
+    except Exception:
+        # fallback heuristic
+        move = choose_heuristic_move(GLOBAL_GAME, me_player_number=player_number, allow_boost=False)
     
     # Example: Use boost if available and it's late in the game
     # turn_count = state.get("turn_count", 0)
