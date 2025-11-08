@@ -6,6 +6,22 @@ from collections import deque
 
 from case_closed_game import Game, Direction, GameResult
 
+MODEL = None
+N_ACTIONS = 8
+
+try:
+    import torch
+    import torch.nn.functional as F
+    from model_def import PolicyNet, INPUT_SIZE, N_ACTIONS as MODEL_ACTIONS
+
+    if MODEL_ACTIONS:
+        N_ACTIONS = MODEL_ACTIONS
+except Exception:
+    torch = None
+    F = None
+    PolicyNet = None
+    INPUT_SIZE = None
+
 # Flask API server setup
 app = Flask(__name__)
 
