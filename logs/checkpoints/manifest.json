@@ -28,5 +28,17 @@
     "episodes": 500,
     "timestamp": "20251109-045608",
     "checkpoint": "logs/checkpoints/safe_focus_1.pth"
+  },
+  {
+    "tag": "wall_focus",
+    "episodes": 600,
+    "timestamp": "20251109-051023",
+    "checkpoint": "logs/checkpoints/wall_focus.pth"
+  },
+  {
+    "tag": "random_focus",
+    "episodes": 800,
+    "timestamp": "20251109-053115",
+    "checkpoint": "logs/checkpoints/random_focus.pth"
   }
 ]

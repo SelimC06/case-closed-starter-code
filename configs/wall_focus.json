@@ -1,0 +1,37 @@
+{
+  "opponents": {
+    "names": [
+      "wall_hugger",
+      "cutter",
+      "random_inertia",
+      "straight_biased",
+      "spiral_runner",
+      "aggressive_chaser",
+      "random_boost",
+      "safe_pocket",
+      "mirror_player"
+    ],
+    "weights": [3.5, 1.0, 0.9, 1.0, 1.8, 1.0, 0.9, 1.2, 1.0]
+  },
+  "rewards": {
+    "living_bonus_max": 0.010,
+    "living_bonus_min": 0.0,
+    "living_bonus_decay_turn": 70,
+    "degree_penalty": 0.030,
+    "degree_threshold": 2,
+    "area_bonus_scale": 0.015,
+    "area_delta_clip": 0.15
+  },
+  "exploration": {
+    "eps_start": 0.7,
+    "eps_end": 0.02,
+    "eps_decay_steps": 35000
+  },
+  "training": {
+    "max_episodes": 600,
+    "seed": 41
+  },
+  "paths": {
+    "checkpoint_path": "model.pth"
+  }
+}
