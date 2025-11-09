@@ -43,10 +43,11 @@ def select_action(model: DQNNetwork, obs: Observation, epsilon: float, rng: np.r
 def compute_td_loss(
     batch: Dict[str, np.ndarray],
     model: DQNNetwork,
-    target_model: DQNNetwork,
+    target_models: list[DQNNetwork],
     config: Config,
     device: torch.device,
-) -> torch.Tensor:
+    weights: torch.Tensor,
+) -> tuple[torch.Tensor, np.ndarray]:
     obs_crop = to_tensor(batch["obs_crop"], device=device)
     obs_scalars = to_tensor(batch["obs_scalars"], device=device)
     next_crop = to_tensor(batch["next_crop"], device=device)
@@ -63,14 +64,22 @@ def compute_td_loss(
         if config.dqn.double_dqn:
             next_q_online = model(next_crop, next_scalars)
             next_actions = torch.argmax(next_q_online.masked_fill(~legal_mask, -1e9), dim=1)
-            target_q = target_model(next_crop, next_scalars)
-            next_q = target_q.gather(1, next_actions.view(-1, 1)).squeeze(1)
+            target_vals = []
+            for target_model in target_models:
+                tm_q = target_model(next_crop, next_scalars)
+                target_vals.append(tm_q.gather(1, next_actions.view(-1, 1)).squeeze(1))
+            next_q = torch.stack(target_vals, dim=0).mean(dim=0)
         else:
-            next_q = target_model(next_crop, next_scalars)
-            next_q = torch.max(next_q.masked_fill(~legal_mask, -1e9), dim=1).values
+            target_vals = []
+            for target_model in target_models:
+                tm_q = target_model(next_crop, next_scalars)
+                target_vals.append(torch.max(tm_q.masked_fill(~legal_mask, -1e9), dim=1).values)
+            next_q = torch.stack(target_vals, dim=0).mean(dim=0)
         target = rewards + (1.0 - dones) * config.dqn.gamma * next_q
-    loss = nn.SmoothL1Loss()(q_selected, target)
-    return loss
+    td_errors = (target - q_selected).detach()
+    losses = nn.SmoothL1Loss(reduction="none")(q_selected, target)
+    loss = torch.mean(losses * weights)
+    return loss, td_errors.cpu().numpy()
 
 
 def save_checkpoint(model: DQNNetwork, config: Config, obs: Observation, path: str, num_actions: int) -> None:
@@ -111,12 +120,13 @@ def archive_checkpoint(src: Path, config: Config, episodes: int, tag: str | None
 
 def _load_checkpoint_if_requested(
     model: DQNNetwork,
-    target_model: DQNNetwork,
+    target_models: list[DQNNetwork],
     resume_path: str | None,
     num_actions: int,
 ) -> None:
     if not resume_path:
-        target_model.load_state_dict(model.state_dict())
+        for target_model in target_models:
+            target_model.load_state_dict(model.state_dict())
         return
 
     payload = torch.load(resume_path, map_location="cpu")
@@ -129,7 +139,8 @@ def _load_checkpoint_if_requested(
     if state_dict is None:
         raise ValueError(f"Checkpoint at {resume_path} is missing a state_dict")
     model.load_state_dict(state_dict)
-    target_model.load_state_dict(model.state_dict())
+    for target_model in target_models:
+        target_model.load_state_dict(model.state_dict())
 
 
 def train(
@@ -149,16 +160,19 @@ def train(
         config.dqn.hidden_sizes,
         num_actions=num_actions,
     ).to(device)
-    target_model = DQNNetwork(
-        obs.crop.shape[0],
-        config.observation.crop_size,
-        obs.scalars.shape[0],
-        config.dqn.hidden_sizes,
-        num_actions=num_actions,
-    ).to(device)
-    _load_checkpoint_if_requested(model, target_model, resume_path, num_actions)
+    target_models = [
+        DQNNetwork(
+            obs.crop.shape[0],
+            config.observation.crop_size,
+            obs.scalars.shape[0],
+            config.dqn.hidden_sizes,
+            num_actions=num_actions,
+        ).to(device)
+        for _ in range(max(1, config.dqn.target_ensembles))
+    ]
+    _load_checkpoint_if_requested(model, target_models, resume_path, num_actions)
     optimizer = torch.optim.Adam(model.parameters(), lr=config.dqn.lr)
-    replay = ReplayBuffer(config.dqn.replay_size)
+    replay = ReplayBuffer(config.dqn.replay_size, alpha=config.dqn.prioritized_alpha)
     rng = np.random.default_rng(config.training.seed)
     telemetry_path = Path(config.paths.telemetry_csv)
     ensure_dir(telemetry_path.parent.as_posix())
@@ -212,13 +226,22 @@ def train(
             done = result.done
 
             if len(replay) >= config.dqn.min_replay_size:
-                batch = replay.sample(config.dqn.batch_size)
-                loss = compute_td_loss(batch, model, target_model, config, device)
+                beta = min(
+                    1.0,
+                    config.dqn.prioritized_beta_start
+                    + (1.0 - config.dqn.prioritized_beta_start)
+                    * (global_step / max(1, config.dqn.prioritized_beta_steps)),
+                )
+                batch, indices, weights, _ = replay.sample(config.dqn.batch_size, beta)
+                weights_t = to_tensor(weights, device=device)
+                loss, td_errors = compute_td_loss(batch, model, target_models, config, device, weights_t)
                 optimizer.zero_grad()
                 loss.backward()
                 nn.utils.clip_grad_norm_(model.parameters(), max_norm=5.0)
                 optimizer.step()
-                soft_update(target_model, model, config.dqn.target_tau)
+                replay.update_priorities(indices, td_errors)
+                for target_model in target_models:
+                    soft_update(target_model, model, config.dqn.target_tau)
 
         result_str = info.get("result") or "RUNNING"
         if result_str == "AGENT1_WIN":

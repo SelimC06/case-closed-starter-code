@@ -11,9 +11,9 @@
       "safe_pocket",
       "mirror_player"
     ],
-    "weights": [0.2, 1.4, 0.2, 0.2, 0.2, 0.3, 0.15, 0.2, 0.2]
+    "weights": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
   },
   "paths": {
-    "checkpoint_path": "model_cutter35.pth"
+    "checkpoint_path": "model.pth"
   }
 }

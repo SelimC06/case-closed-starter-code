@@ -93,3 +93,57 @@ This template provides a few key files to get you started. Here's what each one 
    * `--resume` loads the snapshot before training starts.
    * `--checkpoint` sets the output file for the updated weights.
    * `--tag` (optional) archives the new checkpoint in `logs/checkpoints/` with a manifest entry for easy reference.
+
+### Randomized training starts
+- The training environment now randomizes both agents' spawn locations/directions by default (`training.randomize_starts=True`).
+- Disable this (to match the judge’s fixed opener) by adding `{"training": {"randomize_starts": false}}` to any config file.
+- Randomized openings help the DQN discover general tactics; inference still uses the engine’s standard spawn points, so compatibility with the judge is unaffected.
+
+### Scripted opponents available for training/eval
+`dql/opponents.py` now exposes nine opponents you can mix via any config:
+- `wall_hugger`, `cutter`, `random_inertia`, `straight_biased` (original set)
+- `spiral_runner` – prioritizes smooth spiral turns to close space
+- `aggressive_chaser` – always steers toward our head’s torus position
+- `random_boost` – inertia-heavy driver that relentlessly pushes forward like a boost spammer
+- `safe_pocket` – repeatedly moves toward the largest reachable pocket
+- `mirror_player` – mimics our last heading whenever possible
+
+Update the `opponents.names/weights` arrays in a config (see `configs/default.json` or `configs/cutter35.json`) to emphasize whichever behaviors you want the DQN to learn against.
+
+### Training enhancements baked into the pipeline
+- **Boosting-aware actions:** The DQN now learns over 8 actions (4 directions × boost/no-boost) by default. Existing checkpoints that lacked boost support still load (metadata encodes the action count).
+- **Adaptive shaping:** Survival bonuses decay after turn 120 and a small reachable-area bonus (`rewards.area_bonus_scale`) rewards carving new pockets. Tune these knobs in `dql/config.py`.
+- **Prioritized replay:** The buffer tracks TD-error priorities (`dqn.prioritized_alpha`, `prioritized_beta_start`, etc.) and waits for 20k warmup transitions before updates. You rarely need to change code—just adjust the config if you want a different schedule.
+- **Target ensemble:** Two Polyak-averaged target networks are averaged to stabilize Q-targets under randomized starts.
+
+### Curriculum-ready configs
+Use the staged configs to guide training through focused matchups:
+1. `configs/curriculum_stage1.json` – focuses on `spiral_runner`/`aggressive_chaser` (1k episodes)
+2. `configs/curriculum_stage2.json` – cutter-heavy boot camp (another 1k episodes)
+3. `configs/curriculum_stage3.json` – balanced nine-opponent finale (3k episodes)
+
+Example flow:
+```
+python -m dql.train --config configs/curriculum_stage1.json --episodes 1000 --checkpoint model_stage1.pth --tag stage1
+python -m dql.train --config configs/curriculum_stage2.json --episodes 1000 --resume logs/checkpoints/stage1.pth --checkpoint model_stage2.pth --tag stage2
+python -m dql.train --config configs/curriculum_stage3.json --episodes 3000 --resume logs/checkpoints/stage2.pth --checkpoint model_stage3.pth --tag stage3
+```
+Evaluate between stages to pick the best checkpoint for deployment.
+
+### Handy commands (training, eval, head-to-head)
+
+| Purpose | Command |
+| --- | --- |
+| Install deps | `python3 -m pip install -r requirements.txt` |
+| Start your agent (default port) | `PORT=5008 python agent.py` |
+| Start friend’s agent (separate checkout) | `PORT=5009 python agent.py` |
+| Judge a single match (stock) | `python judge_engine.py` |
+| Judge 10 randomized matches + save boards | `python judge_engine_custom.py` (outputs into `logs/match_visuals/`) |
+| Train from scratch (balanced opponents) | `python -m dql.train --config configs/default.json --episodes 2000 --checkpoint model_balanced.pth --tag balanced-run1` |
+| Resume training from checkpoint | `python -m dql.train --config configs/cutter35.json --episodes 500 --resume logs/checkpoints/<snapshot>.pth --checkpoint model_cutter35.pth --tag cutter35-run2` |
+| Evaluate a checkpoint (default config) | `python -m dql.eval --checkpoint model.pth` |
+| Evaluate with custom config | `python -m dql.eval --config configs/cutter35.json --checkpoint model_cutter35.pth --matches 500` |
+| Archive current model manually | `cp model.pth logs/checkpoints/<tag>.pth` |
+| Create a new worktree for main branch (head-to-head) | `git worktree add ../main-agent origin/main` |
+
+Feel free to script additional variants (e.g., `watch -n 1 python -m dql.eval ...`) depending on your workflow.

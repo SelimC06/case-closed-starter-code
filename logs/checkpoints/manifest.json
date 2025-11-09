@@ -4,5 +4,11 @@
     "episodes": 500,
     "timestamp": "20251109-004013",
     "checkpoint": "logs/checkpoints/cutter35-run1.pth"
+  },
+  {
+    "tag": "stage1",
+    "episodes": 1000,
+    "timestamp": "20251109-024234",
+    "checkpoint": "logs/checkpoints/stage1.pth"
   }
 ]

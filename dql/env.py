@@ -8,10 +8,10 @@ from typing import Any, Dict, Optional, Tuple
 
 import numpy as np
 
-from case_closed_game import Direction, Game, GameResult
+from case_closed_game import Agent, Direction, Game, GameBoard, GameResult
 
 from .config import Config
-from .game_utils import ALL_DIRECTIONS, boost_legal_mask, legal_action_mask, local_degree
+from .game_utils import ALL_DIRECTIONS, boost_legal_mask, flood_fill_area, legal_action_mask, local_degree
 from .observation import Observation, ObservationBuilder
 from .opponents import OpponentPool, PolicyFn
 from .stance import StanceTracker
@@ -36,9 +36,12 @@ class CaseClosedEnv:
         self.current_opponent_name: Optional[str] = None
         self.current_policy: Optional[PolicyFn] = None
         self._action_dim = len(ALL_DIRECTIONS) * (2 if config.actions.use_boost else 1)
+        self.prev_area: Optional[int] = None
 
     def reset(self, opponent_name: Optional[str] = None) -> Tuple[Observation, Dict[str, Any]]:
         self.game.reset()
+        if self.config.training.randomize_starts:
+            self._randomize_start_positions()
         self.stance_tracker.reset()
         if opponent_name:
             self.current_opponent_name = opponent_name
@@ -49,6 +52,9 @@ class CaseClosedEnv:
             self.current_policy = policy
         stance_ctx = self.stance_tracker.update(self.game, self.game.agent1, self.game.agent2)
         obs = self.observer.build(self.game, self.game.agent1, self.game.agent2, stance_ctx)
+        self.prev_area = flood_fill_area(
+            self.game.board, self.game.agent1.trail[-1], cap=self.config.rewards.area_cap
+        )
         return obs, {"opponent": self.current_opponent_name, "stance_ctx": stance_ctx}
 
     def _opponent_move(self) -> Direction:
@@ -65,16 +71,30 @@ class CaseClosedEnv:
             return -1.0
         return 0.0
 
-    def _shaping(self, done: bool) -> Tuple[float, Dict[str, float]]:
+    def _shaping(self, done: bool, area_delta: float) -> Tuple[float, Dict[str, float]]:
         cfg = self.config.rewards
         shaping_terms: Dict[str, float] = {}
-        if not done and cfg.living_bonus:
-            shaping_terms["living"] = float(np.clip(cfg.living_bonus, -cfg.reward_clip, cfg.reward_clip))
+        if not done:
+            living_bonus = cfg.living_bonus_max
+            if self.game.turns >= cfg.living_bonus_decay_turn:
+                decay_den = max(1, 200 - cfg.living_bonus_decay_turn)
+                decay_frac = min(1.0, (self.game.turns - cfg.living_bonus_decay_turn) / decay_den)
+                living_bonus = cfg.living_bonus_max - (cfg.living_bonus_max - cfg.living_bonus_min) * decay_frac
+            living_bonus = float(np.clip(living_bonus, cfg.living_bonus_min, cfg.living_bonus_max))
+            if living_bonus:
+                shaping_terms["living"] = living_bonus
         if cfg.degree_penalty:
             deg = local_degree(self.game.board, *self.game.agent1.trail[-1])
             if deg <= cfg.degree_threshold:
                 penalty = -abs(cfg.degree_penalty)
                 shaping_terms["degree"] = float(np.clip(penalty, -cfg.reward_clip, cfg.reward_clip))
+        if cfg.area_bonus_scale:
+            board_area = self.game.board.width * self.game.board.height
+            delta_norm = area_delta / max(1, board_area)
+            delta_clipped = float(np.clip(delta_norm, -cfg.area_delta_clip, cfg.area_delta_clip))
+            if delta_clipped:
+                area_reward = cfg.area_bonus_scale * delta_clipped
+                shaping_terms["area"] = area_reward
         total = float(np.clip(sum(shaping_terms.values()), -cfg.reward_clip, cfg.reward_clip)) if shaping_terms else 0.0
         return total, shaping_terms
 
@@ -104,7 +124,14 @@ class CaseClosedEnv:
                 result = GameResult.DRAW
 
         base_reward = self._base_reward(result)
-        shaping, shaping_terms = self._shaping(done)
+        area_now = flood_fill_area(
+            self.game.board, self.game.agent1.trail[-1], cap=self.config.rewards.area_cap
+        )
+        area_delta = 0.0
+        if self.prev_area is not None:
+            area_delta = area_now - self.prev_area
+        self.prev_area = area_now
+        shaping, shaping_terms = self._shaping(done, area_delta)
         reward = float(base_reward + shaping)
 
         stance_ctx = self.stance_tracker.update(self.game, self.game.agent1, self.game.agent2)
@@ -134,3 +161,30 @@ class CaseClosedEnv:
                 return "double_crash"
             return "max_turns"
         return "running"
+
+    def _randomize_start_positions(self) -> None:
+        board = GameBoard()
+        directions = list(Direction)
+        occupied = set()
+
+        def sample_start():
+            while True:
+                x = self.rng.randrange(board.width)
+                y = self.rng.randrange(board.height)
+                start = (x, y)
+                direction = self.rng.choice(directions)
+                dx, dy = direction.value
+                second = ((x + dx) % board.width, (y + dy) % board.height)
+                if start in occupied or second in occupied:
+                    continue
+                occupied.add(start)
+                occupied.add(second)
+                return start, direction
+
+        start1, dir1 = sample_start()
+        start2, dir2 = sample_start()
+
+        self.game.board = board
+        self.game.agent1 = Agent(agent_id=1, start_pos=start1, start_dir=dir1, board=board)
+        self.game.agent2 = Agent(agent_id=2, start_pos=start2, start_dir=dir2, board=board)
+        self.game.turns = 0

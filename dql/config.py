@@ -33,16 +33,21 @@ class StanceConfig:
 
 @dataclass
 class RewardConfig:
-    living_bonus: float = 0.015
+    living_bonus_max: float = 0.015
+    living_bonus_min: float = 0.005
+    living_bonus_decay_turn: int = 120
     degree_penalty: float = 0.01
     degree_threshold: int = 1
     reward_clip: float = 0.02
+    area_bonus_scale: float = 0.005
+    area_delta_clip: float = 0.1
+    area_cap: int = 400
     use_stance_rewards: bool = False
 
 
 @dataclass
 class ActionConfig:
-    use_boost: bool = False
+    use_boost: bool = True
 
 
 @dataclass
@@ -55,7 +60,11 @@ class DQNConfig:
     target_tau: float = 0.001
     hard_target_interval: int = 1_000
     double_dqn: bool = True
-    min_replay_size: int = 10_000
+    min_replay_size: int = 20_000
+    prioritized_alpha: float = 0.6
+    prioritized_beta_start: float = 0.4
+    prioritized_beta_steps: int = 200_000
+    target_ensembles: int = 2
 
 
 @dataclass
@@ -73,8 +82,13 @@ class OpponentConfig:
         "cutter",
         "random_inertia",
         "straight_biased",
+        "spiral_runner",
+        "aggressive_chaser",
+        "random_boost",
+        "safe_pocket",
+        "mirror_player",
     ])
-    weights: List[float] = field(default_factory=lambda: [2.0, 1.0, 1.0, 2.0])
+    weights: List[float] = field(default_factory=lambda: [1.5, 1.5, 1.0, 1.2, 1.0, 1.3, 0.8, 1.1, 1.1])
 
 
 @dataclass
@@ -97,6 +111,7 @@ class TrainingConfig:
     eval_interval: int = 50
     log_interval: int = 10
     seed: int = 7
+    randomize_starts: bool = True
 
 
 @dataclass
