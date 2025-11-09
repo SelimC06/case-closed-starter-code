@@ -5,7 +5,9 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import shutil
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 from typing import Dict
 
@@ -15,6 +17,7 @@ from torch import nn
 
 from .config import Config, load_config
 from .env import CaseClosedEnv
+from .game_utils import ALL_DIRECTIONS
 from .model import DQNNetwork
 from .observation import Observation
 from .replay import ReplayBuffer
@@ -70,7 +73,7 @@ def compute_td_loss(
     return loss
 
 
-def save_checkpoint(model: DQNNetwork, config: Config, obs: Observation, path: str) -> None:
+def save_checkpoint(model: DQNNetwork, config: Config, obs: Observation, path: str, num_actions: int) -> None:
     ensure_dir(Path(path).parent.as_posix())
     payload = {
         "state_dict": model.state_dict(),
@@ -79,25 +82,51 @@ def save_checkpoint(model: DQNNetwork, config: Config, obs: Observation, path: s
         "scalar_dim": int(obs.scalars.shape[0]),
         "crop_size": int(obs.crop.shape[1]),
         "hidden_sizes": config.dqn.hidden_sizes,
+        "num_actions": num_actions,
     }
     torch.save(payload, path)
 
 
-def train(config: Config, episodes: int, checkpoint_path: str | None = None) -> None:
+def archive_checkpoint(src: Path, config: Config, episodes: int, tag: str | None = None) -> None:
+    timestamp = datetime.utcnow().strftime("%Y%m%d-%H%M%S")
+    archive_dir = Path(config.paths.log_dir) / "checkpoints"
+    ensure_dir(archive_dir.as_posix())
+    label = tag or f"run-{timestamp}"
+    dest = archive_dir / f"{label}.pth"
+    shutil.copy2(src, dest)
+    manifest_path = archive_dir / "manifest.json"
+    entry = {
+        "tag": label,
+        "episodes": episodes,
+        "timestamp": timestamp,
+        "checkpoint": str(dest),
+    }
+    try:
+        manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else []
+    except json.JSONDecodeError:
+        manifest = []
+    manifest.append(entry)
+    manifest_path.write_text(json.dumps(manifest, indent=2))
+
+
+def train(config: Config, episodes: int, checkpoint_path: str | None = None) -> Path:
     env = CaseClosedEnv(config, seed=config.training.seed)
     obs, info = env.reset()
     device = torch.device("cpu")
+    num_actions = len(ALL_DIRECTIONS) * (2 if config.actions.use_boost else 1)
     model = DQNNetwork(
         obs.crop.shape[0],
         config.observation.crop_size,
         obs.scalars.shape[0],
         config.dqn.hidden_sizes,
+        num_actions=num_actions,
     ).to(device)
     target_model = DQNNetwork(
         obs.crop.shape[0],
         config.observation.crop_size,
         obs.scalars.shape[0],
         config.dqn.hidden_sizes,
+        num_actions=num_actions,
     ).to(device)
     target_model.load_state_dict(model.state_dict())
     optimizer = torch.optim.Adam(model.parameters(), lr=config.dqn.lr)
@@ -195,7 +224,9 @@ def train(config: Config, episodes: int, checkpoint_path: str | None = None) -> 
         for name, vals in opponent_stats.items()
     }
     stats_path.write_text(json.dumps(stats_payload, indent=2), encoding="utf-8")
-    save_checkpoint(model, config, obs, checkpoint_path or config.paths.checkpoint_path)
+    final_checkpoint = Path(checkpoint_path or config.paths.checkpoint_path)
+    save_checkpoint(model, config, obs, final_checkpoint.as_posix(), num_actions)
+    return final_checkpoint
 
 
 def parse_args() -> argparse.Namespace:
@@ -203,6 +234,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", type=str, default=None, help="Path to JSON config overrides")
     parser.add_argument("--episodes", type=int, default=None, help="Number of training episodes")
     parser.add_argument("--checkpoint", type=str, default=None, help="Where to save the checkpoint")
+    parser.add_argument("--tag", type=str, default=None, help="Optional archive tag for the final checkpoint")
     return parser.parse_args()
 
 
@@ -210,7 +242,9 @@ def main() -> None:
     args = parse_args()
     config = load_config(args.config)
     episodes = args.episodes or config.training.max_episodes
-    train(config, episodes, checkpoint_path=args.checkpoint)
+    checkpoint = train(config, episodes, checkpoint_path=args.checkpoint)
+    if args.tag:
+        archive_checkpoint(checkpoint, config, episodes, tag=args.tag)
 
 
 if __name__ == "__main__":

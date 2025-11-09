@@ -11,7 +11,7 @@ import numpy as np
 from case_closed_game import Direction, Game, GameResult
 
 from .config import Config
-from .game_utils import ALL_DIRECTIONS, legal_action_mask, local_degree
+from .game_utils import ALL_DIRECTIONS, boost_legal_mask, legal_action_mask, local_degree
 from .observation import Observation, ObservationBuilder
 from .opponents import OpponentPool, PolicyFn
 from .stance import StanceTracker
@@ -30,11 +30,12 @@ class CaseClosedEnv:
         self.config = config
         self.game = Game()
         self.rng = random.Random(seed or config.training.seed)
-        self.observer = ObservationBuilder(config.observation, config.stance)
+        self.observer = ObservationBuilder(config.observation, config.stance, config.actions)
         self.stance_tracker = StanceTracker(config.stance)
         self.opponents = OpponentPool(config.opponents.names, config.opponents.weights)
         self.current_opponent_name: Optional[str] = None
         self.current_policy: Optional[PolicyFn] = None
+        self._action_dim = len(ALL_DIRECTIONS) * (2 if config.actions.use_boost else 1)
 
     def reset(self, opponent_name: Optional[str] = None) -> Tuple[Observation, Dict[str, Any]]:
         self.game.reset()
@@ -81,13 +82,20 @@ class CaseClosedEnv:
         me = self.game.agent1
         dirs = list(ALL_DIRECTIONS)
         mask = legal_action_mask(self.game.board, me)
-        if not mask[action_idx]:
-            legal_indices = np.where(mask)[0]
+        if self.config.actions.use_boost:
+            boost_mask = boost_legal_mask(self.game.board, me)
+            full_mask = np.concatenate([mask, boost_mask])
+        else:
+            full_mask = mask
+        if not full_mask[action_idx]:
+            legal_indices = np.where(full_mask)[0]
             if len(legal_indices):
                 action_idx = int(self.rng.choice(list(legal_indices)))
-        my_action = dirs[action_idx]
+        dir_index = action_idx % len(dirs)
+        use_boost = self.config.actions.use_boost and action_idx >= len(dirs)
+        my_action = dirs[dir_index]
         opp_action = self._opponent_move()
-        result = self.game.step(my_action, opp_action)
+        result = self.game.step(my_action, opp_action, boost1=use_boost)
 
         done = result is not None
         if self.game.turns >= 200:

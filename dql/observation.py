@@ -9,8 +9,8 @@ import numpy as np
 
 from case_closed_game import Agent, Game
 
-from .config import ObservationConfig, StanceConfig
-from .game_utils import legal_action_mask, local_degree, torus_delta
+from .config import ActionConfig, ObservationConfig, StanceConfig
+from .game_utils import boost_legal_mask, legal_action_mask, local_degree, torus_delta
 
 
 @dataclass
@@ -22,9 +22,10 @@ class Observation:
 
 
 class ObservationBuilder:
-    def __init__(self, obs_cfg: ObservationConfig, stance_cfg: StanceConfig):
+    def __init__(self, obs_cfg: ObservationConfig, stance_cfg: StanceConfig, action_cfg: ActionConfig):
         self.cfg = obs_cfg
         self.stance_cfg = stance_cfg
+        self.action_cfg = action_cfg
         self._scalar_dim_cache = None
 
     def _global_layers(self, game: Game, me: Agent, opp: Agent) -> np.ndarray:
@@ -104,7 +105,12 @@ class ObservationBuilder:
         crop = self._crop(layers, me.trail[-1], W, H)
         scalars = self._scalar_vector(game, me, opp, turn_fraction, stance_ctx)
         mask = legal_action_mask(game.board, me)
-        return Observation(crop=crop, scalars=scalars, legal_actions=mask, stance_ctx=stance_ctx)
+        if self.action_cfg.use_boost:
+            boost_mask = boost_legal_mask(game.board, me)
+            legal = np.concatenate([mask, boost_mask])
+        else:
+            legal = mask
+        return Observation(crop=crop, scalars=scalars, legal_actions=legal, stance_ctx=stance_ctx)
 
     @property
     def scalar_dim(self) -> int:

@@ -48,6 +48,23 @@ def legal_action_mask(board: GameBoard, agent, include_reverse: bool = False):
     return mask
 
 
+def boost_legal_mask(board: GameBoard, agent) -> np.ndarray:
+    mask = legal_action_mask(board, agent)
+    if agent.boosts_remaining <= 0:
+        return np.zeros_like(mask, dtype=bool)
+    head_x, head_y = agent.trail[-1]
+    boost_mask = mask.copy()
+    for idx, direction in enumerate(ALL_DIRECTIONS):
+        if not boost_mask[idx]:
+            continue
+        dx, dy = DIR_VECS[direction]
+        nx, ny = wrap_pos(head_x + dx, head_y + dy, board.width, board.height)
+        nx2, ny2 = wrap_pos(nx + dx, ny + dy, board.width, board.height)
+        if is_blocked(board, nx2, ny2):
+            boost_mask[idx] = False
+    return boost_mask
+
+
 def local_degree(board: GameBoard, x: int, y: int) -> int:
     deg = 0
     for dx, dy in DIR_VECS.values():

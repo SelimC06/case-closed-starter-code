@@ -30,7 +30,7 @@ class DQNPolicy:
         self.config = config
         self.device = torch.device("cpu")
         self.checkpoint_path = checkpoint_path
-        self.builder = ObservationBuilder(config.observation, config.stance)
+        self.builder = ObservationBuilder(config.observation, config.stance, config.actions)
         self.stance_trackers = {1: StanceTracker(config.stance), 2: StanceTracker(config.stance)}
         self.model, self.meta = self._load_model(checkpoint_path)
         self.rng = np.random.default_rng(config.training.seed)
@@ -38,11 +38,13 @@ class DQNPolicy:
     def _load_model(self, path: str) -> Tuple[DQNNetwork, dict]:
         payload = torch.load(path, map_location="cpu")
         hidden_sizes = payload.get("hidden_sizes") or self.config.dqn.hidden_sizes
+        num_actions = payload.get("num_actions", len(ALL_DIRECTIONS))
         model = DQNNetwork(
             payload["crop_channels"],
             payload.get("crop_size", self.config.observation.crop_size),
             payload["scalar_dim"],
             hidden_sizes,
+            num_actions=num_actions,
         )
         state_dict = payload.get("state_dict")
         if state_dict:

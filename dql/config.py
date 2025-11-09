@@ -41,6 +41,11 @@ class RewardConfig:
 
 
 @dataclass
+class ActionConfig:
+    use_boost: bool = False
+
+
+@dataclass
 class DQNConfig:
     replay_size: int = 100_000
     batch_size: int = 256
@@ -99,6 +104,7 @@ class Config:
     observation: ObservationConfig = field(default_factory=ObservationConfig)
     stance: StanceConfig = field(default_factory=StanceConfig)
     rewards: RewardConfig = field(default_factory=RewardConfig)
+    actions: ActionConfig = field(default_factory=ActionConfig)
     dqn: DQNConfig = field(default_factory=DQNConfig)
     exploration: ExplorationConfig = field(default_factory=ExplorationConfig)
     opponents: OpponentConfig = field(default_factory=OpponentConfig)
