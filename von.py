@@ -84,7 +84,14 @@ def try_load_model():
         MODEL = m
 
 
-def encode_state(board, my_trail, other_trail) -> Tuple['np.ndarray', 'np.ndarray']:
+def encode_state(
+    board,
+    my_trail,
+    other_trail,
+    turn_count,
+    my_boost,
+    other_boost,
+) -> Tuple['np.ndarray', 'np.ndarray']:
     """Build (img, aux) suitable for DQNNet input.
 
     img: (5, H, W)
@@ -121,12 +128,9 @@ def encode_state(board, my_trail, other_trail) -> Tuple['np.ndarray', 'np.ndarra
 
     my_len = len(my_trail) if my_trail else 0
     other_len = len(other_trail) if other_trail else 0
-    turn = game_state.get("turn_count", 0)
-    my_boost = game_state.get("agent1_boosts" if game_state.get("player_number", 2) == 1 else "agent2_boosts", 3)
-    other_boost = game_state.get("agent2_boosts" if game_state.get("player_number", 2) == 1 else "agent1_boosts", 3)
 
     aux = _np.array([
-        float(turn) / 500.0,
+        float(turn_count) / 500.0,
         float(my_len) / 200.0,
         float(other_len) / 200.0,
         float(my_boost) / 3.0,
@@ -206,10 +210,10 @@ def decide_safe_move(board, my_trail, other_trail, turn_count, my_boosts):
     return fallback
 
 
-def dqn_decide_move(board, my_trail, other_trail, turn_count, my_boosts):
+def dqn_decide_move(board, my_trail, other_trail, turn_count, my_boosts, other_boosts):
     if not TORCH_AVAILABLE or MODEL is None:
         return decide_safe_move(board, my_trail, other_trail, turn_count, my_boosts)
-    img_np, aux_np = encode_state(board, my_trail, other_trail)
+    img_np, aux_np = encode_state(board, my_trail, other_trail, turn_count, my_boosts, other_boosts)
     img_t = torch.from_numpy(img_np).unsqueeze(0)  # (1,C,H,W)
     aux_t = torch.from_numpy(aux_np).unsqueeze(0)  # (1,8)
     with torch.no_grad():
@@ -237,18 +241,22 @@ def receive_state():
 
 @app.route("/send-move", methods=["GET"])
 def send_move():
-    player_number = request.args.get("player_number", default=game_state.get("player_number", 2), type=int)
+    player_number = request.args.get("player_number", default=game_state.get("player_number", 1), type=int)
     turn_count = request.args.get("turn_count", default=game_state.get("turn_count", 0), type=int)
+    game_state["player_number"] = player_number
+    game_state["turn_count"] = turn_count
     if player_number == 1:
         my_trail = game_state.get("agent1_trail", [])
         my_boosts = game_state.get("agent1_boosts", 3)
         other_trail = game_state.get("agent2_trail", [])
+        other_boosts = game_state.get("agent2_boosts", 3)
     else:
         my_trail = game_state.get("agent2_trail", [])
         my_boosts = game_state.get("agent2_boosts", 3)
         other_trail = game_state.get("agent1_trail", [])
+        other_boosts = game_state.get("agent1_boosts", 3)
     board = game_state.get("board") or [[0 for _ in range(20)] for _ in range(18)]
-    move = dqn_decide_move(board, my_trail, other_trail, turn_count, my_boosts)
+    move = dqn_decide_move(board, my_trail, other_trail, turn_count, my_boosts, other_boosts)
     return jsonify({"move": move}), 200
 
 
