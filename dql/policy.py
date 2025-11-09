@@ -63,7 +63,7 @@ class DQNPolicy:
             return game.agent1, game.agent2
         return game.agent2, game.agent1
 
-    def predict(self, game: Game, player_number: int = 1) -> Tuple[Direction, PolicyOutput]:
+    def predict(self, game: Game, player_number: int = 1) -> Tuple[int, PolicyOutput]:
         me, opp = self._get_agents(game, player_number)
         stance_ctx = self.stance_trackers[player_number].update(game, me, opp)
         obs = self.builder.build(game, me, opp, stance_ctx)
@@ -86,8 +86,7 @@ class DQNPolicy:
         else:
             candidates = np.where(q_values == best)[0]
         action_idx = int(self.rng.choice(candidates)) if len(candidates) else int(np.argmax(q_values))
-        direction = ALL_DIRECTIONS[action_idx]
-        return direction, PolicyOutput(action_idx, q_values, mask, obs.scalars)
+        return action_idx, PolicyOutput(action_idx, q_values, mask, obs.scalars)
 
 
 def load_policy(checkpoint_path: str, config_path: Optional[str] = None) -> DQNPolicy:

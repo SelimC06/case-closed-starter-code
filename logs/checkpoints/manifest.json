@@ -22,5 +22,11 @@
     "episodes": 3000,
     "timestamp": "20251109-044514",
     "checkpoint": "logs/checkpoints/stage3.pth"
+  },
+  {
+    "tag": "safe_focus_1",
+    "episodes": 500,
+    "timestamp": "20251109-045608",
+    "checkpoint": "logs/checkpoints/safe_focus_1.pth"
   }
 ]

@@ -11,7 +11,6 @@ import numpy as np
 
 from .config import load_config
 from .env import CaseClosedEnv
-from .game_utils import ALL_DIRECTIONS
 from .policy import DQNPolicy
 from .utils import ensure_dir
 
@@ -25,8 +24,7 @@ def run_matches(env: CaseClosedEnv, policy: DQNPolicy, opponent: str, matches: i
         done = False
         final_info = info
         while not done:
-            direction, _ = policy.predict(env.game, player_number=1)
-            action_idx = ALL_DIRECTIONS.index(direction)
+            action_idx, _ = policy.predict(env.game, player_number=1)
             result = env.step(action_idx)
             done = result.done
             final_info = result.info
