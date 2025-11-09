@@ -1,0 +1,24 @@
+Seed: 1762659864.3644743
+Result: AGENT1_WIN
+Turns: 81
+Game Log:
+1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1U-2U-1R-2L-1D-2U-1D-2L-1D-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2U-1R-2L-1D-2U-1R-2L-1D-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2U-1R-2L-1D-2U-1R-2L-1D-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2L-1R-2D-1R-2L-
+Final Board:
+. . . . . . . . . . . . . . . . . . . .
+A . . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . .
+A A A A A A A A A A A A A A A A A A A .
+. . . . . . . . . . . . . . . . . . A A
+A A A A A A A A A A A A A A A A A A . A
+. . . . . . . . . . . . . . . . . A A .
+A A A A A A A A A A A A A A A A A . A A
+A . A A A A A A A A A A A A A A A A A A
+A A A . . . . . . . . . . . . . . . . .
+. A A A A A A A A A A A A A A A A A A A
+A . . . . . . . . . . . . . . . . . . A
+A A A A A A A A A A A A A A A A A A A .
+. . . . . . . . . . . . . . . . . . A A
+A A A A A A A A A A A A A A A A A A . A
+. . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
