@@ -16,5 +16,11 @@
     "episodes": 1000,
     "timestamp": "20251109-030525",
     "checkpoint": "logs/checkpoints/stage2.pth"
+  },
+  {
+    "tag": "stage3",
+    "episodes": 3000,
+    "timestamp": "20251109-044514",
+    "checkpoint": "logs/checkpoints/stage3.pth"
   }
 ]
