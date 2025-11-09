@@ -85,3 +85,11 @@ This template provides a few key files to get you started. Here's what each one 
 * Due to platform and build-time constraints, participants are limited to **CPU-only PyTorch**; GPU-enabled versions, including CUDA builds, are disallowed. Any other heavy-duty GPU or large ML frameworks (like Tensorflow, JAX) will not be allowed.
 * Ensure your agent's `requirements.txt` is complete before pushing changes.
 * If you run into any issues, take a look at your own agent first before asking for help.
+
+### Continuing training from a saved checkpoint
+1. Archive the current model (optional but recommended): `cp model.pth logs/checkpoints/my_snapshot.pth`.
+2. Create a JSON override for opponent weights (e.g., `configs/cutter35.json` with 35% cutter weight).
+3. Resume training: `python -m dql.train --config configs/cutter35.json --episodes 500 --resume logs/checkpoints/my_snapshot.pth --checkpoint model_cutter35.pth --tag cutter35-run1`.
+   * `--resume` loads the snapshot before training starts.
+   * `--checkpoint` sets the output file for the updated weights.
+   * `--tag` (optional) archives the new checkpoint in `logs/checkpoints/` with a manifest entry for easy reference.

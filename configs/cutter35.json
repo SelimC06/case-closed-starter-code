@@ -1,0 +1,14 @@
+{
+  "opponents": {
+    "names": [
+      "wall_hugger",
+      "cutter",
+      "random_inertia",
+      "straight_biased"
+    ],
+    "weights": [0.25, 1.4, 0.25, 0.25]
+  },
+  "paths": {
+    "checkpoint_path": "model_cutter35.pth"
+  }
+}

@@ -109,7 +109,35 @@ def archive_checkpoint(src: Path, config: Config, episodes: int, tag: str | None
     manifest_path.write_text(json.dumps(manifest, indent=2))
 
 
-def train(config: Config, episodes: int, checkpoint_path: str | None = None) -> Path:
+def _load_checkpoint_if_requested(
+    model: DQNNetwork,
+    target_model: DQNNetwork,
+    resume_path: str | None,
+    num_actions: int,
+) -> None:
+    if not resume_path:
+        target_model.load_state_dict(model.state_dict())
+        return
+
+    payload = torch.load(resume_path, map_location="cpu")
+    checkpoint_actions = payload.get("num_actions", len(ALL_DIRECTIONS))
+    if checkpoint_actions != num_actions:
+        raise ValueError(
+            f"Checkpoint action dimension ({checkpoint_actions}) does not match current model ({num_actions})."
+        )
+    state_dict = payload.get("state_dict")
+    if state_dict is None:
+        raise ValueError(f"Checkpoint at {resume_path} is missing a state_dict")
+    model.load_state_dict(state_dict)
+    target_model.load_state_dict(model.state_dict())
+
+
+def train(
+    config: Config,
+    episodes: int,
+    checkpoint_path: str | None = None,
+    resume_path: str | None = None,
+) -> Path:
     env = CaseClosedEnv(config, seed=config.training.seed)
     obs, info = env.reset()
     device = torch.device("cpu")
@@ -128,7 +156,7 @@ def train(config: Config, episodes: int, checkpoint_path: str | None = None) -> 
         config.dqn.hidden_sizes,
         num_actions=num_actions,
     ).to(device)
-    target_model.load_state_dict(model.state_dict())
+    _load_checkpoint_if_requested(model, target_model, resume_path, num_actions)
     optimizer = torch.optim.Adam(model.parameters(), lr=config.dqn.lr)
     replay = ReplayBuffer(config.dqn.replay_size)
     rng = np.random.default_rng(config.training.seed)
@@ -235,6 +263,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--episodes", type=int, default=None, help="Number of training episodes")
     parser.add_argument("--checkpoint", type=str, default=None, help="Where to save the checkpoint")
     parser.add_argument("--tag", type=str, default=None, help="Optional archive tag for the final checkpoint")
+    parser.add_argument("--resume", type=str, default=None, help="Resume training from an existing checkpoint")
     return parser.parse_args()
 
 
@@ -242,7 +271,12 @@ def main() -> None:
     args = parse_args()
     config = load_config(args.config)
     episodes = args.episodes or config.training.max_episodes
-    checkpoint = train(config, episodes, checkpoint_path=args.checkpoint)
+    checkpoint = train(
+        config,
+        episodes,
+        checkpoint_path=args.checkpoint,
+        resume_path=args.resume,
+    )
     if args.tag:
         archive_checkpoint(checkpoint, config, episodes, tag=args.tag)
 

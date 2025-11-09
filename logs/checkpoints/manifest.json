@@ -1,0 +1,8 @@
+[
+  {
+    "tag": "cutter35-run1",
+    "episodes": 500,
+    "timestamp": "20251109-004013",
+    "checkpoint": "logs/checkpoints/cutter35-run1.pth"
+  }
+]
